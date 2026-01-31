@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarto Billing System - Tailors</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-cut"></i> Sarto Billing System</h1>
+            <p>Professional Tailoring Services</p>
+        </header>
+
+        <main>
+            <div class="items-section">
+                <h2>Select Items</h2>
+                <div class="items-grid">
+                    <!-- Normal Blouse -->
+                    <div class="item-card">
+                        <div class="item-image">
+                            <i class="fas fa-tshirt"></i>
+                        </div>
+                        <h3>Normal Blouse</h3>
+                        <p class="price">₹100</p>
+                        <div class="quantity-controls">
+                            <button onclick="updateQuantity('normal-blouse', -1)">-</button>
+                            <span id="normal-blouse-qty">0</span>
+                            <button onclick="updateQuantity('normal-blouse', 1)">+</button>
+                        </div>
+                    </div>
+
+                    <!-- Lining Blouse -->
+                    <div class="item-card">
+                        <div class="item-image">
+                            <i class="fas fa-vest"></i>
+                        </div>
+                        <h3>Lining Blouse</h3>
+                        <p class="price">₹200/₹250</p>
+                        <div class="lining-options">
+                            <label>
+                                <input type="radio" name="lining-type" value="yes" checked>
+                                Yes (₹200)
+                            </label>
+                            <label>
+                                <input type="radio" name="lining-type" value="no">
+                                No (₹250)
+                            </label>
+                        </div>
+                        <div class="quantity-controls">
+                            <button onclick="updateQuantity('lining-blouse', -1)">-</button>
+                            <span id="lining-blouse-qty">0</span>
+                            <button onclick="updateQuantity('lining-blouse', 1)">+</button>
+                        </div>
+                    </div>
+
+                    <!-- Chudithar -->
+                    <div class="item-card">
+                        <div class="item-image">
+                            <i class="fas fa-female"></i>
+                        </div>
+                        <h3>Chudithar</h3>
+                        <p class="price">₹250</p>
+                        <div class="quantity-controls">
+                            <button onclick="updateQuantity('chudithar', -1)">-</button>
+                            <span id="chudithar-qty">0</span>
+                            <button onclick="updateQuantity('chudithar', 1)">+</button>
+                        </div>
+                    </div>
+
+                    <!-- Inskirt -->
+                    <div class="item-card">
+                        <div class="item-image">
+                            <i class="fas fa-circle"></i>
+                        </div>
+                        <h3>Inskirt</h3>
+                        <p class="price">₹50</p>
+                        <div class="quantity-controls">
+                            <button onclick="updateQuantity('inskirt', -1)">-</button>
+                            <span id="inskirt-qty">0</span>
+                            <button onclick="updateQuantity('inskirt', 1)">+</button>
+                        </div>
+                    </div>
+
+                    <!-- Piping Blouse -->
+                    <div class="item-card">
+                        <div class="item-image">
+                            <i class="fas fa-shirt"></i>
+                        </div>
+                        <h3>Piping Blouse</h3>
+                        <p class="price">₹250</p>
+                        <div class="quantity-controls">
+                            <button onclick="updateQuantity('piping-blouse', -1)">-</button>
+                            <span id="piping-blouse-qty">0</span>
+                            <button onclick="updateQuantity('piping-blouse', 1)">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bill-section">
+                <h2>Bill Summary</h2>
+                <div class="bill-details">
+                    <div id="bill-items"></div>
+                    <div class="total-section">
+                        <div class="total-row">
+                            <span>Total Amount:</span>
+                            <span id="total-amount">₹0</span>
+                        </div>
+                    </div>
+                    <button class="pay-now-btn" onclick="processPayment()">
+                        <i class="fas fa-credit-card"></i> Pay Now
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
